@@ -129,18 +129,29 @@
                 </div>
             </div>
 
-            <form action="">
-                <div class="inpts_form">
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Email">
-                    <input type="text" placeholder="Mobile Number">
-                    <input type="text" placeholder="Subject">
 
-                    <textarea name="" id="" rows="10" placeholder="Your Message Here"></textarea>
-                </div>
+            <form class="contact-card" onsubmit="sendToWhatsApp(event)">
+    <h2>Send to WhatsApp</h2>
+    <input type="text" id="name" placeholder="اسمك الكامل" required />
+    <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+    <textarea id="message" placeholder="اكتب رسالتك هنا..." rows="5" required></textarea>
+    <button type="submit">Send to WhatsApp</button>
+  </form>
 
-                <button class="btn">Send Message</button>
-            </form>
+  <script>
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const phone = "201158678135";
+      const text = `👋 مرحبًا، لدي رسالة جديدة من الموقع الشخصي:\n\n🧑 الاسم: ${name}\n📧 البريد: ${email}\n💬 الرسالة: ${message}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
 
         </div>
     </section>
