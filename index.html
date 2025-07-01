@@ -129,28 +129,28 @@
                 </div>
             </div>
 
-              <form class="contact-card" onsubmit="sendToWhatsApp(event)">
-    <h2>Send to WhatsApp</h2>
+            <form class="contact-card" onsubmit="sendToWhatsApp(event)">
+    <h2>راسلنا عبر واتساب</h2>
     <input type="text" id="name" placeholder="اسمك الكامل" required />
-    <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+    <input type="tel" id="phone" placeholder="رقم الهاتف" required />
     <textarea id="message" placeholder="اكتب رسالتك هنا..." rows="5" required></textarea>
-    <button type="submit">Send to WhatsApp</button>
+    <button type="submit">إرسال عبر واتساب</button>
   </form>
 
   <script>
-    function sendToWhatsApp(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+  function sendToWhatsApp(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const phoneNumber = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
 
-      const phone = "201158678135";
-      const text = `👋 مرحبًا، لدي رسالة جديدة من الموقع:\n\n🧑 الاسم: ${name}\n📧 البريد: ${email}\n💬 الرسالة: ${message}`;
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    const whatsappReceiver = "201150164400"; // ← رقمك الجديد بصيغة دولية
+    const text = `👋 مرحبًا، لدي رسالة جديدة من موقع مدرسة القيم النبيلة:\n\n🧑 الاسم: ${name}\n📞 رقم الهاتف: ${phoneNumber}\n💬 الرسالة: ${message}`;
+    const url = `https://wa.me/${whatsappReceiver}?text=${encodeURIComponent(text)}`;
 
-      window.open(url, "_blank");
-    }
-  </script>
+    window.open(url, "_blank");
+  }
+</script>
 
 
     </section>
