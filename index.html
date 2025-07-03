@@ -145,7 +145,7 @@
     const message = document.getElementById("message").value;
 
     const whatsappReceiver = "201158678135"; // ← رقمك الجديد بصيغة دولية
-    const text = `👋 مرحبًا، لدي رسالة جديدة من موقع مدرسة القيم النبيلة:\n\n🧑 الاسم: ${name}\n📞 رقم الهاتف: ${phoneNumber}\n💬 الرسالة: ${message}`;
+    const text = `👋 مرحبًا، لدي رسالة جديدة من الموقع الخاص بك  :\n\n🧑 الاسم: ${name}\n📞 رقم الهاتف: ${phoneNumber}\n💬 الرسالة: ${message}`;
     const url = `https://wa.me/${whatsappReceiver}?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
